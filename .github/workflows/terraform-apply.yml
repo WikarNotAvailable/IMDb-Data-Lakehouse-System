@@ -6,6 +6,8 @@ on:
       - main
     paths:
       - 'infrastructure/**'
+      
+  workflow_dispatch:
 
 env:
   TF_CLOUD_ORGANIZATION: "dev-wikar-playground"
