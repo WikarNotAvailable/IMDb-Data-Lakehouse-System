@@ -172,3 +172,9 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Terraform files to ignore
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
