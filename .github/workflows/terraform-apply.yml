@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'Infrastructure/**'
+      - 'infrastructure/**'
 
 env:
   TF_CLOUD_ORGANIZATION: "dev-wikar-playground"
