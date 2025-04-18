@@ -1,12 +1,12 @@
 locals {
-prefix = "databricks-imdb"
+  prefix = "databricks-imdb"
   tags = {
     Environment = "Dev"
-    Owner = "wikar8998@gmail.com"
+    Owner       = "wikar8998@gmail.com"
   }
 }
 
-resource "azurerm_databricks_workspace" "this" {
+resource "azurerm_databricks_workspace" "dbworkspace" {
   name                        = "${local.prefix}-workspace"
   resource_group_name         = var.resource_group.name
   location                    = var.resource_group.location

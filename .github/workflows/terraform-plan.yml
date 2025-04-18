@@ -1,11 +1,13 @@
 name: "Terraform Plan"
 
 on:
-  pull_request:
+  push:
     branches:
       - features/*
     paths:
       - 'Infrastructure/**'
+  
+  workflow_dispatch:
 
 env:
   TF_CLOUD_ORGANIZATION: "dev-wikar-playground"
