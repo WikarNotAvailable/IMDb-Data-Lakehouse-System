@@ -18,3 +18,11 @@ module "databricks_workspace" {
     location = azurerm_resource_group.rg.location
   }
 }
+
+module "data_lake_storage" {
+  source = "./modules/data_lake_storage"
+  resource_group = {
+    name     = azurerm_resource_group.rg.name
+    location = azurerm_resource_group.rg.location
+  }
+}
