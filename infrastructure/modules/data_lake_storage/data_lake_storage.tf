@@ -11,8 +11,14 @@ resource "azurerm_storage_account" "dlstorage" {
   location                 = var.resource_group.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
-  tags = local.tags
-  is_hns_enabled = true
+  tags                     = local.tags
+  is_hns_enabled           = true
+}
+
+resource "azurerm_role_assignment" "dlcontributor" {
+  scope                = azurerm_storage_account.dlstorage.id
+  role_definition_name = "Storage Blob Data Contributor"
+  principal_id         = var.service_principal_id
 }
 
 resource "azurerm_storage_container" "bronze" {

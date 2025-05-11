@@ -5,3 +5,8 @@ variable "resource_group" {
   })
   description = "Azure resource group"
 }
+
+variable "service_principal_id" {
+  type = string
+  description = "Service principal ID of imdb app"
+}

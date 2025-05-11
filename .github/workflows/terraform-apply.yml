@@ -3,7 +3,7 @@ name: "Terraform Apply"
 on:
   push:
     branches:
-      - features/*
+      - main
     paths:
       - 'infrastructure/**'
       
