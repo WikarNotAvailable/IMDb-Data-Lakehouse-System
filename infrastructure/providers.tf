@@ -3,7 +3,11 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 3.0.2"
+      version = "~> 4.9"
+    }
+    databricks = {
+      source = "databricks/databricks"
+      version = ">= 1.74.0"
     }
   }
   cloud {
@@ -16,4 +20,8 @@ terraform {
 
 provider "azurerm" {
   features {}
+}
+
+provider "databricks" {
+  alias                       = "databricks_provider_config"
 }
