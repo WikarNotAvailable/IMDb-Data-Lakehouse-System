@@ -8,6 +8,16 @@ variable "resource_id" {
   description = "Secret scope resource id"
 }
 
+variable "location" {
+  type        = string
+  description = "Location for resources"
+}
+
+variable "datalake_connector_id" {
+  type        = string
+  description = "Access connector id of datalake connector"
+}
+
 locals {
   default_policy = {
     "spark_conf.spark.databricks.cluster.profile" : {

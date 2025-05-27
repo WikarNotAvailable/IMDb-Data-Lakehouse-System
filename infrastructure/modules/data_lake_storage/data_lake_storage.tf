@@ -21,6 +21,12 @@ resource "azurerm_role_assignment" "dlcontributor" {
   principal_id         = var.service_principal_id
 }
 
+resource "azurerm_role_assignment" "dlconnectorcontributor" {
+  scope                = azurerm_storage_account.dlstorage.id
+  role_definition_name = "Storage Blob Data Contributor"
+  principal_id         = var.datalake_connector_principal_id
+}
+
 resource "azurerm_storage_container" "bronze" {
   storage_account_id    = azurerm_storage_account.dlstorage.id
   name                  = "bronze"

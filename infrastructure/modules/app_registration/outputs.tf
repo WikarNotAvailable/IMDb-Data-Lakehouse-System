@@ -8,5 +8,5 @@ output "azure_ad_app_password" {
 }
 
 output "service_principal_id" {
-  value     = azuread_service_principal.imdbappservprinc.object_id
+  value = azuread_service_principal.imdbappservprinc.object_id
 }

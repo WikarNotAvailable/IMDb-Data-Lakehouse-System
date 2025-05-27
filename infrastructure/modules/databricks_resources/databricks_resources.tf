@@ -16,6 +16,14 @@ resource "databricks_secret_scope" "kv" {
   }
 }
 
+resource "databricks_storage_credential" "datalake_credential" {
+  name = "imdb_datalake_credential"
+  azure_managed_identity {
+    access_connector_id = var.datalake_connector_id
+  }
+  comment = "Managed identity credential managed by TF"
+}
+
 resource "databricks_cluster_policy" "all_purpose_clusters" {
   name       = "IMDb cluster policy"
   definition = jsonencode(local.default_policy)

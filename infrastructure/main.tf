@@ -15,6 +15,14 @@ module "app_registration" {
   source = "./modules/app_registration"
 }
 
+module "managed_identities" {
+  source = "./modules/managed_identities"
+  resource_group = {
+    name     = azurerm_resource_group.rg.name
+    location = azurerm_resource_group.rg.location
+  }
+}
+
 module "databricks_workspace" {
   source = "./modules/databricks_workspace"
   resource_group = {
@@ -29,7 +37,8 @@ module "data_lake_storage" {
     name     = azurerm_resource_group.rg.name
     location = azurerm_resource_group.rg.location
   }
-  service_principal_id = module.app_registration.service_principal_id
+  service_principal_id  = module.app_registration.service_principal_id
+  datalake_connector_principal_id = module.managed_identities.datalake_connector_principal_id
 }
 
 module "key_vault" {
@@ -42,7 +51,19 @@ module "key_vault" {
 }
 
 module "databricks_resources" {
-  source = "./modules/databricks_resources"
-  resource_id = module.key_vault.key_vault_resource_id
-  dns_name = module.key_vault.key_vault_uri
+  source      = "./modules/databricks_resources"
+  resource_id = module.key_vault.key_vault_resource_id 
+  dns_name    = module.key_vault.key_vault_uri
+  location    = azurerm_resource_group.rg.location
+  datalake_connector_id = module.managed_identities.datalake_connector_id
+}
+
+module "metastore_storage" {
+  source = "./modules/uc_metastore"
+  resource_group = {
+    name     = azurerm_resource_group.rg.name
+    location = azurerm_resource_group.rg.location
+  }
+  metastore_connector_principal_id = module.managed_identities.metastore_connector_principal_id
+  databricks_workspace_id = module.databricks_workspace.databricks_workspace_id
 }

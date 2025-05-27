@@ -7,6 +7,11 @@ variable "resource_group" {
 }
 
 variable "service_principal_id" {
-  type = string
+  type        = string
   description = "Service principal ID of imdb app"
+}
+
+variable "datalake_connector_principal_id" {
+  type        = string
+  description = "Access connector principal id of imdb datalake connector"
 }

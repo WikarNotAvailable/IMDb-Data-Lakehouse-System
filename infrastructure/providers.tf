@@ -6,7 +6,7 @@ terraform {
       version = "~> 4.9"
     }
     databricks = {
-      source = "databricks/databricks"
+      source  = "databricks/databricks"
       version = ">= 1.74.0"
     }
   }
@@ -23,5 +23,5 @@ provider "azurerm" {
 }
 
 provider "databricks" {
-  alias                       = "databricks_provider_config"
+  alias = "databricks_provider_config"
 }

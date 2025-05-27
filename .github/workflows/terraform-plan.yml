@@ -3,7 +3,7 @@ name: "Terraform Plan"
 on:
   pull_request:
     branches:
-      - features/*
+      - main
     paths:
       - 'infrastructure/**'
   

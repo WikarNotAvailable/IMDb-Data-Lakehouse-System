@@ -181,3 +181,4 @@ terraform.tfstate.backup
 
 .databricks
 .vscode
+.databricks.yml
