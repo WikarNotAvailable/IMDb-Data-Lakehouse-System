@@ -183,3 +183,4 @@ terraform.tfstate.backup
 .vscode
 databricks.yml
 databricks-notebooks/data
+databricks-notebooks/local

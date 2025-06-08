@@ -34,9 +34,45 @@ data "databricks_spark_version" "latest_lts" {
 }
 
 resource "databricks_cluster" "dev_cluster" {
-  cluster_name            = "Development cluster"
+  cluster_name            = "Development cluster eco"
   spark_version           = data.databricks_spark_version.latest_lts.id
   node_type_id            = "Standard_F4"
+  policy_id               = databricks_cluster_policy.all_purpose_clusters.id
+  data_security_mode      = "SINGLE_USER"
+  single_user_name        = "wikar8998@gmail.com"
+  autotermination_minutes = 10
+  custom_tags = {
+    "ResourceClass" = "SingleNode"
+  }
+  spark_conf = {
+    "spark.databricks.cluster.photon.enabled" = "false"
+    "spark.databricks.cluster.profile"        = "singleNode"
+    "spark.master"                            = "local[*, 4]"
+  }
+}
+
+resource "databricks_cluster" "dev_cluster_memory" {
+  cluster_name            = "Development cluster eco more memory"
+  spark_version           = data.databricks_spark_version.latest_lts.id
+  node_type_id            = "Standard_D4s_v3"
+  policy_id               = databricks_cluster_policy.all_purpose_clusters.id
+  data_security_mode      = "SINGLE_USER"
+  single_user_name        = "wikar8998@gmail.com"
+  autotermination_minutes = 10
+  custom_tags = {
+    "ResourceClass" = "SingleNode"
+  }
+  spark_conf = {
+    "spark.databricks.cluster.photon.enabled" = "false"
+    "spark.databricks.cluster.profile"        = "singleNode"
+    "spark.master"                            = "local[*, 4]"
+  }
+}
+
+resource "databricks_cluster" "dev_cluster_standard" {
+  cluster_name            = "Development cluster standard"
+  spark_version           = data.databricks_spark_version.latest_lts.id
+  node_type_id            = "Standard_D8s_v3"
   policy_id               = databricks_cluster_policy.all_purpose_clusters.id
   data_security_mode      = "SINGLE_USER"
   single_user_name        = "wikar8998@gmail.com"
