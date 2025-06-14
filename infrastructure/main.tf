@@ -67,3 +67,14 @@ module "metastore_storage" {
   metastore_connector_principal_id = module.managed_identities.metastore_connector_principal_id
   databricks_workspace_id = module.databricks_workspace.databricks_workspace_id
 }
+
+module "azure_data_factory" {
+  source = "./modules/azure_data_factory"
+  resource_group = {
+    name     = azurerm_resource_group.rg.name
+    location = azurerm_resource_group.rg.location
+  } 
+  databricks_cluster_id = module.databricks_resources.databricks_cluster_id
+  databricks_workspace_resource_id = module.databricks_workspace.databricks_resource_id
+  databricks_workspace_url = module.databricks_workspace.databricks_host
+}
