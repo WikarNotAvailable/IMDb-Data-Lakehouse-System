@@ -9,6 +9,7 @@ For this purpose ELT process was performed and data was organized into medalion 
 modeling impact through categorized queries, along with a results validation, was performed.
 
 **Technologies**
+
 - Cloud environment: Microsoft Azure with Databricks
 - Infrastructure provisioning: Terraform
 - Programming language: Python
@@ -30,6 +31,7 @@ issues. Therefore, this dataset might be treated as the benchmark for the experi
 <img width="2169" height="1556" alt="archi (1)" src="https://github.com/user-attachments/assets/dc6fe2de-3a96-449f-b822-17a789d399b2" />
 
 **Data Models**
+
 3NF:
 <img width="3488" height="3649" alt="3NF" src="https://github.com/user-attachments/assets/76068eb6-ef90-41b8-8c8b-39c7e5c60fb6" />
 
