@@ -1,12 +1,7 @@
 # IMDb-Data-Lakehouse-System
-The aim of this project was to examine the influence of data modeling in the context of
-modern data architectures on the possibilities of Big Data processing and storage. In order
-to accomplish this goal, within the Data Lakehouse architecture, three data models
-representing different levels of schema normalization were designed and implemented.
-The 3NF, Star Schema, and One Big Table models were compared. 
+The aim of this project was to examine how data modeling influences Big Data processing and storage within modern data architectures. To achieve this, three data models with varying levels of schema normalization, 3NF, Star Schema, and One Big Table, were designed and implemented in the context of a Data Lakehouse.
 
-For this purpose ELT process was performed and data was organized into medalion architecture design pattern. Finally, analysis of the data
-modeling impact through categorized queries, along with a results validation, was performed.
+An ELT process was carried out, and the data was organized following the Medallion architecture design pattern. Finally, the impact of data modeling was analyzed through categorized queries, and the results were validated.
 
 **Technologies**
 
