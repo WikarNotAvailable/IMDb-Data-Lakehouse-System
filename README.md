@@ -33,13 +33,16 @@ issues. Therefore, this dataset might be treated as the benchmark for the experi
 **Data Models**
 
 3NF:
+
 <img width="3488" height="3649" alt="3NF" src="https://github.com/user-attachments/assets/76068eb6-ef90-41b8-8c8b-39c7e5c60fb6" />
 
 Star Schema:
+
 <img width="2552" height="2098" alt="star1" src="https://github.com/user-attachments/assets/91335ebc-93fa-4c6f-aa8b-66a8d88abb9f" />
 
 One Big Table:
-<img width="400" height="1000" alt="obt" src="https://github.com/user-attachments/assets/6aabd2fb-b773-413c-a7de-18486ff2fe03" />
+
+<img width="600" height="1000" alt="obt" src="https://github.com/user-attachments/assets/6aabd2fb-b773-413c-a7de-18486ff2fe03" />
 
 **Examplary Visualizations**
 <img width="948" height="400" alt="powerbi1 (1)" src="https://github.com/user-attachments/assets/14b75521-5b0d-4625-aa99-711535770e1a" />
