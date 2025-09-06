@@ -42,9 +42,10 @@ Star Schema:
 
 One Big Table:
 
-<img width="600" height="1000" alt="obt" src="https://github.com/user-attachments/assets/6aabd2fb-b773-413c-a7de-18486ff2fe03" />
+<img width="400" height="800" alt="obt" src="https://github.com/user-attachments/assets/6aabd2fb-b773-413c-a7de-18486ff2fe03" />
 
 **Examplary Visualizations**
+
 <img width="948" height="400" alt="powerbi1 (1)" src="https://github.com/user-attachments/assets/14b75521-5b0d-4625-aa99-711535770e1a" />
 
 <img width="590" height="904" alt="powerbi2 (1)" src="https://github.com/user-attachments/assets/e9e4a9fe-9232-4da4-8c79-c2a7afdd2762" />
